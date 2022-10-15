@@ -1,0 +1,143 @@
+#logo {
+    /*animation-name: mymove;
+    animation-duration: 5s;*/
+    animation: mymove 5s;
+}
+
+@keyframes mymove{
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+  }
+
+body {
+    font-family: 'Poppins', serif;
+    background-image: url(../images/concrete_seamless.png);
+    background-color:#f1f1f1;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+a:link, a:visited {
+    color: #0000ff;
+}
+
+.card > header {
+    background-color: #288088;    
+    border: 2px solid #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.card {
+    border-radius: 50px 50px 0px 0px;
+    flex-basis: 450px;
+}
+
+.pricing {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery > img {
+    border: 10px solid #50C7C7;
+    margin: 10px 10px 10px 10px;
+    width: 300px;
+}
+.gallery {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 900px) {
+    header {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card {
+        width: 275px;
+        flex-basis: 275px;
+    }
+
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+   body > header {
+        position: sticky;
+        top: 0;
+    }
+}
+
+@media all and (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    } 
+
+    #logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header { 
+        align-items: unset;
+    }
+    
+    header img {
+        align-self: center;
+    }
+    
+    .nav_links {
+        justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .pricing{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+    }
+
+    .card {
+        flex-basis: 325px;
+        border: 2px solid #45ADDD;
+    }
+
+    .gallery, #gallery {
+        display: none;
+    }
+
+    div li:nth-child(2)::after {
+        content: " \1F44D"
+    }
+
+  }
